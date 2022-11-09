@@ -1,13 +1,24 @@
 import React from 'react';
+import data from './data.json';
 import HornedBeast from "./HornedBeast";
 
 class Main extends React.Component{
   render() {
+    let beastArr = [];
+    data.forEach((beast,idx) => {
+      beastArr.push(
+        <HornedBeast 
+        src={beast.image_url}
+        alt={beast.description}
+        name={beast.title}
+        description={beast.description}
+        key={idx}
+        />)
+    })
     return (
       <>
         <main>
-          <HornedBeast src="https://via.placeholder.com/150" alt="A picture of the flabby beast" name="Scary Horn Flab" description="The scariest flabbiest thing ever known to man. Experts said they don't know why its so flabby or why it has horns. It is just in it's nature to be flabby and have a ton of horns. Pretty wild." />
-          <HornedBeast src="https://via.placeholder.com/150" alt="A picture of the mobster beast" name="Horned Mobster" description="This mobster has been lurking the wilds of the rainforest for years. Using their horns they hold other animals up for their hard earned food and also threaten them for protection with their wild horns. They are known and feared by other animals for their rackateering and extortion behaviors." />
+          {beastArr}
         </main>
       </>
     )
