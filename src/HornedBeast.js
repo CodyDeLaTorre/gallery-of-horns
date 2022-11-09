@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 class HornedBeast extends React.Component {
 
@@ -9,25 +11,28 @@ class HornedBeast extends React.Component {
     };
   }
 
-  handleFav= () => {
+  handleFav = () => {
     this.setState({
-      favorite: this.state.favorite + 1}
-      );
+      favorite: this.state.favorite + 1
+    }
+    );
   };
 
-  render () {
+  render() {
     console.log(this.state.favorite);
     return (
-    <>
-      <article>
-        <img src={this.props.src} alt={this.props.alt}/>
-        <div>💕Faved: {this.state.favorite} </div>
-        <div id ='button' onClick={this.handleFav}>Like</div>
-        <h2>{this.props.name}</h2>
-        <p>{this.props.description}</p>
-      </article>
-    </>
-  )
+      <>
+        <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src={this.props.src} alt={this.props.alt} />
+          <Card.Body>
+            <Card.Title>{this.props.name}</Card.Title>
+            <Card.Text>{this.props.description}</Card.Text>
+            <Button variant="primary" onClick={this.handleFav}>Like</Button>
+            <div>💕Faved: {this.state.favorite} </div>
+          </Card.Body>
+        </Card>
+      </>
+    )
   }
 }
 
