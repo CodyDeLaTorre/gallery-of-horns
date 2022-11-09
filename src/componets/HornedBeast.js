@@ -18,12 +18,12 @@ class HornedBeast extends React.Component {
     );
   };
 
+
   render() {
-    console.log(this.state.favorite);
     return (
       <>
         <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={this.props.src} alt={this.props.alt} />
+          <Card.Img variant="top" src={this.props.src} alt={this.props.alt} onClick={this.props.handleOpenModal} />
           <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
             <Card.Text>{this.props.description}</Card.Text>
