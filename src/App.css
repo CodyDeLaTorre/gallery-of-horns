@@ -16,10 +16,16 @@ main {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  position: relative;
+}
+
+form{
+  position: absolute;
+  z-index: 1;
 }
 
 .card {
-  margin-top: 15px;
+  margin-top: 50px;
   border: 1px solid rgb(65, 63, 63);
 }
 
